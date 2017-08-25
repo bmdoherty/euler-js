@@ -1,4 +1,4 @@
-const f = require('./3');
+const f = require('./3'); 
 
 test('largest prime factor of 13195', () => {
   expect( f(13195) ).toBe( 29 );

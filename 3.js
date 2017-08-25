@@ -29,5 +29,4 @@ const f = (number) => {
     return Math.max.apply(null, primefactors)
 }
 
-
 module.exports = f;
