@@ -1,7 +1,6 @@
 // 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
 // What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
 
-
 // Using Euclid's algorithm
 // A much more efficient method is the Euclidean algorithm, 
 // which uses a division algorithm such as long division in combination with the observation that the gcd of 
