@@ -8,11 +8,12 @@ const f = (n) => {
     let primes = []
     let upperLimit = Math.sqrt(n)
 
-    // Make an array from 2 to (n - 1)
+    // Make an sieve from 2 to (n - 1)
     for (var i = 0; i < n; i++) {
         sieve.push(true);
     }
 
+    // identify primes
     for (let i = 2; i <= upperLimit; ++i) {
         if (sieve[i]) {
             // i has not been removed it is prime
@@ -25,7 +26,7 @@ const f = (n) => {
         }
     }
 
-    // extract primes
+    // extract primes from sieve
     for (var i = 2; i < n; i++) {
         if(sieve[i]) {
             primes.push(i);
