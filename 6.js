@@ -12,13 +12,8 @@ const range = (min, max) => {
 
 const f = (min,max) => {
      
-    sumOfSquares = range(min,max).map( n => n * n)
-        .reduce( (sum,value) => sum = sum + value )
-
-    squareOfSums = Math.pow(range(min,max).reduce( (sum,value) => sum = sum + value ),2)
-
-    console.log(squareOfSums)
-    //.map( n => n * n)
+    sumOfSquares = range(min,max).map( n => n * n).reduce( (sum,value) => sum = sum + value )
+    squareOfSums = Math.pow( range(min,max).reduce( (sum,value) => sum = sum + value) ,2)
 
     return squareOfSums - sumOfSquares
 }
