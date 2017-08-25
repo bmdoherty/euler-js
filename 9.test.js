@@ -5,7 +5,7 @@ test('4 adjacent digits in the 1000-digit number that have the greatest product'
 });
 
 test('13 adjacent digits in the 1000-digit number that have the greatest product', () => {
-    expect( f(1000) ).toBe( 23514624000 );
+    expect( f(1000) ).toBe( 31875000 );
 });
 
   
