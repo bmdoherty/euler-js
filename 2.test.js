@@ -1,4 +1,4 @@
-const f = require('./2');
+const f = require('./2'); 
 
 test('sum even financci sequence less than 4', () => {
   expect( f(4) ).toBe( 2 );

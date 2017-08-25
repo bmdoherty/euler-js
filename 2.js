@@ -31,7 +31,6 @@ const f = (number) => {
     const sequence = fibonacci()
     let a = []
 
-    
     while(true){
         let x = sequence.next().value
         
