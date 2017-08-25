@@ -42,8 +42,3 @@ const f = (min, max) => {
 }
 
 module.exports = f;
-
-// var multiple = min;
-// range(min, max).forEach(function(n) {
-//     multiple = lcm(multiple, n);
-// });
