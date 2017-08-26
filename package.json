@@ -4,7 +4,7 @@
   "description": "project euler in js",
   "main": "1.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest -o"
   },
   "repository": {
     "type": "git",
