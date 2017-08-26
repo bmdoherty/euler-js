@@ -102,7 +102,6 @@ const isValidCoordinate = (grid, x, y) => {
 }
 
 const f = (lineLength) => {
-    let l = 20
     let grid = makeGrid(20)
     let lines = []
     
