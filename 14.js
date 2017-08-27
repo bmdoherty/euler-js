@@ -1,5 +1,5 @@
 
-// Work out the first ten digits of the sum of the following one-hundred 50-digit numbers.
+// What is the value of the first triangle number to 'have over five hundred divisors?
 
 const b = '37107287533902102798797998220837590246510135740250,'
 +'46376937677490009712648124896970078050417018260538,'
@@ -127,10 +127,8 @@ const add = (a, b) => {
         }
     
         addition = (x + y + c)
-
         u = addition % 10
         c = Math.floor( addition / 10)
-        //console.log(`x: ${x} y: ${y}  i: ${i} c: ${c} u: ${u} `)
         sum[sum.length-1-i] = u
 
         i++
