@@ -1,4 +1,4 @@
-const {f, add, subtract, multiply} = require('./20');
+const {f, add, subtract, multiply} = require('./20'); 
 
 test('add', () => {
     expect( add( [0],  [ 7, 9, 8, 3, 3, 6, 0, 0 ]) ).toEqual( [ 7, 9, 8, 3, 3, 6, 0, 0 ] );
