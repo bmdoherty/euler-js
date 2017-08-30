@@ -1,5 +1,8 @@
+// Find the sum of the digits in the number 100!
 
-//What is the sum of the digits of the number 21000
+const numToArray = (a) => {
+    return (a+'').split('').map( i => parseInt(i))
+}
 
 // Returns true if a is smaller than b.
 const isSmaller = (a,b) => {
@@ -67,7 +70,58 @@ const add = (a, b) => {
     return result
 }
 
+const subtract = (a, b) => {
+    let calc
+    let result = []
+    let borrow = 0
 
+    let big = isSmaller(a, b) ? b : a
+    let small = (a === big) ? b : a
+
+    let diff = big.length - small.length
+
+    let start = small.length-1
+    for(i=start; i>=0; i--){
+        calc = big[i+diff] - small[i] - borrow
+        //console.log(`small ${big[i]} ${small[i]} ${borrow} == ${calc}`)
+
+        if(calc < 0){
+            calc = calc+10
+            borrow = 1
+        } else {
+            borrow = 0
+        }
+        //console.log(`small borrow ${borrow}`)
+        result.unshift( calc % 10)
+       
+    }
+
+    start = big.length - small.length - 1
+    for(let j=start; j>=0; j--){
+        calc =  big[j] - 0 - borrow
+        //console.log(`big ${big[j]} 0 ${borrow} == ${calc}`)
+        if(calc < 0){
+            calc = calc+10
+            borrow = 1
+        } else {
+            borrow = 0
+        }   
+        //console.log(`big borrow ${borrow}`)    
+        result.unshift( calc % 10)
+    }         
+
+    if(borrow){
+        calc =  0 - borrow
+        //console.log(`final 0  ${borrow} == ${calc}`)
+        result.unshift( calc)
+    }  
+
+    while(result[0] === 0){ 
+        result.shift();       
+    }
+
+    return result
+}
 
 function multiply(a, b) {
     var partialProducts = [] 
@@ -104,16 +158,36 @@ function multiply(a, b) {
     return product;
 }
 
-
-
-const f = (n, power) => {
-    let product = [1]
-
-    for(let i=0; i<power; i++){
-        product = multiply(product, [n])
+const factorial = (n) => {
+    
+    
+    if( n.length === 1 && n[0] === 1){
+        // console.log('terminate')
+        // console.log(n)
+        return [1]
     }
 
-    return product.reduce( (sum,value) => sum = sum + value)
+    let next = subtract(n, [1] )
+
+    // console.log('do another')
+    // console.log(n)
+    // console.log(next)
+    
+    let fact = multiply(n, factorial( next ))
+    // console.log(n)
+    // console.log(fact)
+    // console.log('=================')
+    return  fact
 }
 
-module.exports = {f, multiply};
+const f = (n) => {
+    
+    n = numToArray(n)
+
+    let x = factorial(n)
+        .reduce( (sum, value) => sum = sum + value)
+
+    return x
+}
+
+module.exports = {f, add, subtract, multiply};
