@@ -30,13 +30,9 @@ const getTotalScore = (arr) => {
 
 async function f() {
     let response = await getNames()
-
     let names = response.replace(/["]+/g, '').split(',').sort()
 
     return  getTotalScore(names) 
 }
 
 module.exports = {f, getTotalScore, score, sumOfLetters}
-
-
-
