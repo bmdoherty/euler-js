@@ -1,5 +1,5 @@
-const f = require('./23'); 
+const f = require('./24'); 
 
 test('add', () => {
-    expect( f(28123) ).toEqual( 4179871 );
+    expect( f(1000000) ).toEqual( '2783915460' );
 });
