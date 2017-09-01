@@ -6,6 +6,14 @@ const numToArray = (a) => {
 
 // Returns true if a is smaller than b.
 const isSmaller = (a,b) => {
+    while(a[0] === 0){ 
+        a.shift();       
+    }
+
+    while(b[0] === 0){ 
+        b.shift();       
+    }    
+
     // Calculate lengths of both string
     let lenA = a.length 
     let lenB = b.length
