@@ -1,38 +1,86 @@
 
-// Evaluate the sum of all the amicable numbers under 10000.
+const getMultipliers  = (arr) => {
+    let s = []
+    let digits = arr.slice()
 
-const swap = (arr, a, b) => {
-    let tmp = arr[a]
-    arr[a] = arr[b]
-    arr[b] = tmp
+    for(i=0; i<digits.length; i++){
+        for(j=0; j<digits.length; j++){    
+            if( `${digits[i]}`.indexOf(digits[j]) === -1){   
+                for(k=0; k<digits.length; k++){           
+                    if( `${digits[i]}${digits[j]}`.indexOf(digits[k]) === -1){
+                            
+                        s.push( parseInt(`${digits[i]}${digits[j]}${digits[k]}`))
+
+                        for(l=i+1; l<digits.length; l++){
+                            if( `${digits[i]}${digits[j]}${digits[k]}`.indexOf(digits[l]) === -1){
+                                s.push( parseInt(`${digits[i]}${digits[j]}${digits[k]}${digits[l]}`))
+                            }
+                        }
+                    }        
+                }
+            }
+        }    
+    }
+    return s
 }
 
-const generate = (A, n, p = []) => {
-    // base case
-    if(n == 1 ){
-        p.push(A.join(''))
+const getMultiplicands = (digits) => {
+    let s = digits.slice()
+
+    for(i=0; i<digits.length; i++){
+        for(j=0; j<digits.length; j++){
+            if( `${digits[i]}`.indexOf(digits[j]) === -1){
+                s.push( parseInt(`${digits[i]}${digits[j]}` ))                                  
+            }  
+        } 
     }
-    else {
 
-        for(let i=0; i<n-1; i++){
-            generate( A, n - 1, p)
+    return s
+}
 
-            if(n % 2 == 0){
-                swap(A, i, (n-1))
-            } else {
-                swap(A, 0, (n-1)) 
-            }
+const findDigit = (num, used) => {
+    let digitsInNum = (''+num).split('')
+    let keep = true 
+    for(let d=0; d<digitsInNum.length; d++){
+        if(used.toString().indexOf(digitsInNum[d]) > -1){
+            keep = false
         }
-        generate( A, (n-1), p)
     }
+    return keep
+}
 
-    return p
+const compare = (a,b) => {
+    return a.length==b.length && a.every((v,i)=> v === b[i])
 }
 
 const f = (digits) => {
-    let perms = generate(digits, digits.length)
+    let sum = 0
+    let products = {}
+    let multiplicands = getMultiplicands(digits)
+    let multipliers = getMultipliers(digits)
 
-    return perms
+    for(let i=1; i<multiplicands.length; i++){
+        multiplicand = multiplicands[i]
+        
+        posibleMultipliers = multipliers.filter( num => findDigit(num, multiplicand))
+
+        for(let j=0; j<posibleMultipliers.length; j++){
+            let multplier = posibleMultipliers[j]
+            let unused = digits.filter( num => findDigit(num, multiplicand)).filter( num => findDigit(num, multplier))
+
+            let product =  ((multiplicand * multplier)+'').split('').map(Number).sort()
+            
+            if( compare(unused, product) ){
+                if(!products[product]){
+                    sum = sum + (multiplicand * multplier)
+                    console.log(`${multiplicand} * ${multplier} = ${multiplicand * multplier}`)
+                    products[product] = product
+                }
+            }
+        }
+    }
+
+    return sum
 }
 
 module.exports = f
