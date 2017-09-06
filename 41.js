@@ -1,24 +1,43 @@
 "use strict"
-
-const lookup = (limit) => {
-    let s = ''
-    let i = 1
-
-    while( s.length < limit){
-        s = s + `${i}`
-        i++
-    }
-    
-    return s
+const compare = (a,b) => {
+    return a.every( (v,i) => v == b[i] )
 }
 
-const f = (a) => {
-    let max = Math.max(...a)
-    let s = lookup(max)
-    
-    let product = a.map( v => parseInt(s.charAt(v-1)) ).reduce ( (s,v) => s = s * v)
+const primes = (n) => {
+    let sieve = []
+    let limit = Math.floor(Math.sqrt(n))
 
-  return product
+    for(let i=0; i<n; i++){
+        sieve[i] = true
+    }
+
+    for(let i=2; i<=limit; i++){
+        if( sieve[i] ){
+            for(let j=i+i; j<=n; j=j+i){
+                sieve[j] = false
+            }
+        }
+    }
+
+    for(let i=n; i>0; i--){
+        if(sieve[i]){
+            let sorted = `${i}`.split('').map(Number).sort( (a,b) => a-b ) 
+            let pandigital = [...Array(sorted.length).keys()].map( v=> v+1)
+
+            if( sorted.length > 1 && compare(sorted, pandigital) ){
+                return i
+            }               
+        }
+    }
+
+    return undefined
+}
+
+const f = () => {
+
+    let p = primes(7654321)
+
+  return p 
 }
 
 module.exports = f
