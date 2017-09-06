@@ -1,6 +1,6 @@
 "use strict"
 
-function lookup(limit) {
+const lookup = (limit) => {
     let s = ''
     let i = 1
 
