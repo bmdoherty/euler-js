@@ -1,18 +1,14 @@
-const {f, sumOfWord} = require('./42'); 
+const {f, sumOfWordChars, isTriangleWord} = require('./42'); 
 
 test('sumOfWord', () => {
-    expect( sumOfWord('SKY') ).toEqual( 55 );
+    expect( sumOfWordChars('SKY') ).toEqual( 55 );
 });
 
-// test('score', () => {
-//     expect( score( 0, 'COLIN', 0 ) ).toEqual( 53 );
-// });
-
-// test('getTotalScore', () => {
-//     expect( getTotalScore( ['COLIN','COLIN'] ) ).toEqual( 159 );
-// });
+test('isTriangleWord', () => {
+    expect( isTriangleWord('SKY') ).toEqual( true );
+});
 
 it('works with async/await', async () => {
-    expect( await f() ).toEqual(871198282);
+    expect( await f() ).toEqual( 162 );
 });
   

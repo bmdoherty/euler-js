@@ -1,5 +1,5 @@
 "use strict"
-
+console.time("timer")
 const lookup = (limit) => {
     let s = ''
     let i = 1
@@ -22,3 +22,4 @@ const f = (a) => {
 }
 
 module.exports = f
+console.timeEnd("timer")

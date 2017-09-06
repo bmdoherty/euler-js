@@ -1,4 +1,5 @@
 "use strict"
+console.time("timer")
 
 function solutions(p) {
   let solutions = []
@@ -29,3 +30,4 @@ const f = (limit) => {
 }
 
 module.exports = f
+console.timeEnd("timer")

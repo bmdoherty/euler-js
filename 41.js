@@ -1,4 +1,6 @@
 "use strict"
+console.time("timer")
+
 const compare = (a,b) => {
     return a.every( (v,i) => v == b[i] )
 }
@@ -41,3 +43,4 @@ const f = () => {
 }
 
 module.exports = f
+console.timeEnd("timer")
