@@ -39,7 +39,7 @@ const getPrimeFactorsFor = (N) => {
         }
     }
 
-    if( primes.has(N)){
+    if(primes.has(N)){
         factors.add(N);
     }
     
@@ -53,7 +53,7 @@ const f = (n) => {
 
     while( consecutiveNumbers.length < n){
 
-        distinctPrimeFactors =  getPrimeFactorsFor(i).size
+        distinctPrimeFactors =  getPrimeFactorsFor(i).size 
         
         if(distinctPrimeFactors == n){
             consecutiveNumbers.push(i)
