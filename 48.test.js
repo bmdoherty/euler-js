@@ -1,5 +1,5 @@
 const f = require('./48'); 
 
 test('f', () => {
-    expect( f(10) ).toEqual( 134043 );
-});
+    expect( f(1000) ).toEqual( 9110846700 );
+}); 
