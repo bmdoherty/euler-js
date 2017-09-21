@@ -38,7 +38,6 @@ test('isLychrel 10677', () => {
 
 test('f', () => {
     expect( f(10000) ).toEqual( 249 );
-}); 
-
+});
 
 
