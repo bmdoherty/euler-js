@@ -17,9 +17,9 @@
   },
   "homepage": "https://github.com/bmdoherty/euler-js#readme",
   "devDependencies": {
-    "jest": "^20.0.4"
+    "jest": "^20.4.2"
   },
   "dependencies": {
-    "big-integer": "^1.6.32"
+    "big-integer": "^1.6.34"
   }
 }
