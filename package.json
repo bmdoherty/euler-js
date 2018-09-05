@@ -16,10 +16,10 @@
     "url": "https://github.com/bmdoherty/euler-js/issues"
   },
   "homepage": "https://github.com/bmdoherty/euler-js#readme",
-  "devDependencies": {
-    "jest": "^20.4.2"
-  },
   "dependencies": {
-    "big-integer": "^1.6.34"
+    "big-integer": "^1.6.35"
+  },
+  "devDependencies": {
+    "jest": "^23.5.0"
   }
 }
