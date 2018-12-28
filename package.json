@@ -1,25 +1,25 @@
 {
-  "name": "euler-js",
-  "version": "1.0.0",
-  "description": "project euler in js",
-  "main": "1.js",
-  "scripts": {
-    "test": "jest -o"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bmdoherty/euler-js.git"
-  },
-  "author": "bmdoherty",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/bmdoherty/euler-js/issues"
-  },
-  "homepage": "https://github.com/bmdoherty/euler-js#readme",
-  "dependencies": {
-    "big-integer": "^1.6.36"
-  },
-  "devDependencies": {
-    "jest": "^23.6.0"
-  }
+    "name": "euler-js",
+    "version": "1.0.0",
+    "description": "project euler in js",
+    "main": "1.js",
+    "scripts": {
+        "test": "jest -o"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/bmdoherty/euler-js.git"
+    },
+    "author": "bmdoherty",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/bmdoherty/euler-js/issues"
+    },
+    "homepage": "https://github.com/bmdoherty/euler-js#readme",
+    "dependencies": {
+        "big-integer": "^1.6.40"
+    },
+    "devDependencies": {
+        "jest": "^23.6.0"
+    }
 }
